@@ -13,13 +13,23 @@
       rel="stylesheet"
     />
 
-    <!-- JavaScript -->
-    <script src="/scripts.js" defer> </script>
+    <!-- This loads the JavaScript and runds it. Does not need to be called
+    scripts, but is common. The "defer" atrribute tells the browser to load the
+    HTML fist before running JavaScript. -->
+
+    <!-- defer downlaods, parses it, and only once HTML is ready runs -->
+    <!-- async downlaods, parses it, and immediately runs it in the background -->
+
+    <script src="/scripts.js" defer type="module"></script>
   </head>
+  
   <body>
     <header class="header">
       <h1 class="header__title">Tally Count</h1>
     </header>
+    <noscript class="error">
+      <p>This web app requires JavaScript to work</p>
+    </noscript>
 
  <!--- <aside class="controls">
       <label>
@@ -47,7 +57,7 @@
       <input class="counter__value" data-key="number" readonly value="0"/>
       <div class="counter__actions">
         <button data-key="subtract"class="counter__button counter__button_first">-</button>
-        <button data-key="add"class="counter__button">+</button>
+        <button data-key="add" class="counter__button">+</button>
       </div>
     </main>
 

@@ -1,9 +1,7 @@
+(function(){"use strict";
 
 /** This is the signed in user */
 const user = 'Lara'
-
-console.log(user)
-
 
 const MAX_NUMBER = 15
 const MIN_NUMBER = -5
@@ -43,3 +41,5 @@ if (newValue >= MAX_NUMBER) {
 
 subtract.addEventListener('click', subtractHandler )
 add.addEventListener('click', addHandler)
+
+})();
