@@ -67,3 +67,15 @@ const isValid = firstName && age
 if (isValid) {
     console.log('Valid to the max!')
 }
+
+
+const randomCaseLog = (text) => {
+    const isUpper = Math.random() >= 0.5
+    const method = isUpper ? 'toUpperCase' : 'toLowerCase'
+    const result = text[method]()
+    console.log(result)
+  }
+  
+  randomCaseLog ('Lara')
+  randomCaseLog('Ziggy')
+  randomCaseLog(' ;iqfgwq o;fgo')
