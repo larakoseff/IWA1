@@ -1,100 +1,165 @@
-// if (1 === 1) { 
-//     console.log ('true')
-// } else {
-//     console.log('not true')
-// }
-
-// // short cut, good for resolving value, but not so readable
-
-// let value = (1 === 1 ? 'true' : 'not true')
-// console.log(value)
-
-// // both conditions need to be true 
-// const result1 =  (1=== 1 && 5 === 4 )
-// console.log(result1 === 'not true')
-
-// // one condition needs to be true
-
-// const result2 = (1===1 || 4===5)
-// console.log(result2 === true ? 'a' : 'b')
-
-// const first = '1'
-// const second = '2'
-
-// console.log(`${first} ${second}`)
-
-// const active = false
-// let user
-
-
-// if (active !== true) {
-//     user = null
-// }
-
-// const month = 'apr'
-
-// switch (month) {
-//     case 'dec': case 'jan': case 'feb': console.log('Summer'); break;
-//     case 'mar': case 'apr': case 'may': console.log('Autumn'); break;
-//     case 'jun': case 'jul': case 'aug': console.log('Winter'); break;
-//     case 'sept':  case 'oct': case 'nov': console.log('Spring'); break; 
-//     default: throw new Error ('Invalid month')
-// }
-
-// if (month === 'mar' || month === 'apr' || month === 'may' ) {
-//     console.log ('Autumn')
-// } 
-// if (month === 'jun' || month === 'jul' || month === 'aug' ) {
-//     console.log('winter')
-// } 
-//  if (month === 'sept' || month === 'oct' || month === 'nov') {
-//     console.log('Spring')
-// } 
-//  if (month === 'dec' || month === 'jan' || month === 'feb') {
-//     console.log('Summer')
-//  }
-
+// // if (1 === 1) { 
+// //     console.log ('true')
 // // } else {
-// //     throw new Error ('Invalid month')
+// //     console.log('not true')
 // // }
 
+// // // short cut, good for resolving value, but not so readable
 
-// const firstName = 'Schalk'
-// const age = 10
+// // let value = (1 === 1 ? 'true' : 'not true')
+// // console.log(value)
 
-// const isValid = firstName && age
+// // // both conditions need to be true 
+// // const result1 =  (1=== 1 && 5 === 4 )
+// // console.log(result1 === 'not true')
 
-// if (isValid) {
-//     console.log('Valid to the max!')
+// // // one condition needs to be true
+
+// // const result2 = (1===1 || 4===5)
+// // console.log(result2 === true ? 'a' : 'b')
+
+// // const first = '1'
+// // const second = '2'
+
+// // console.log(`${first} ${second}`)
+
+// // const active = false
+// // let user
+
+
+// // if (active !== true) {
+// //     user = null
+// // }
+
+// // const month = 'apr'
+
+// // switch (month) {
+// //     case 'dec': case 'jan': case 'feb': console.log('Summer'); break;
+// //     case 'mar': case 'apr': case 'may': console.log('Autumn'); break;
+// //     case 'jun': case 'jul': case 'aug': console.log('Winter'); break;
+// //     case 'sept':  case 'oct': case 'nov': console.log('Spring'); break; 
+// //     default: throw new Error ('Invalid month')
+// // }
+
+// // if (month === 'mar' || month === 'apr' || month === 'may' ) {
+// //     console.log ('Autumn')
+// // } 
+// // if (month === 'jun' || month === 'jul' || month === 'aug' ) {
+// //     console.log('winter')
+// // } 
+// //  if (month === 'sept' || month === 'oct' || month === 'nov') {
+// //     console.log('Spring')
+// // } 
+// //  if (month === 'dec' || month === 'jan' || month === 'feb') {
+// //     console.log('Summer')
+// //  }
+
+// // // } else {
+// // //     throw new Error ('Invalid month')
+// // // }
+
+
+// // const firstName = 'Schalk'
+// // const age = 10
+
+// // const isValid = firstName && age
+
+// // if (isValid) {
+// //     console.log('Valid to the max!')
+// // }
+
+// /**
+//  * @typedef {"uppercase" | "lowercase" } format - The format as supplied to the function
+//  * @typedef {"toUpperCase" | "toLowerCase"} nativeKeys - The matching key as used by JavaScript internally
+//  * 
+//  */
+
+// /**
+//  * 
+//  * @param {string } text 
+//  * @param {format} [format] 
+//  * @returns {string}
+//  */
+
+// const changeCase = (text, format) => {
+//     /**
+//      * @type {Record<format | 'random', nativeKeys>}
+//      */
+// const formatMap = {
+//     random: Math.random() >= 0.5 ? 'toUpperCase' : 'toLowerCase',
+//     uppercase: 'toupperCase',
+//     lowercase: 'toLowerCase',
 // }
 
-/**
- * @typedef {"uppercase" | "lowercase" } format - The format as supplied to the function
- * @typedef {"toUpperCase" | "toLowerCase"} nativeKeys - The matching key as used by JavaScript internally
- * 
- */
+// const method = formatMap[format || 'random']
+// return text[method]()
 
-/**
- * 
- * @param {string } text 
- * @param {format} [format] 
- * @returns {string}
- */
+//   }
+  
+// console.log(changeCase('Lara'))
+// console.log(changeCase('Hello'))
 
-const changeCase = (text, format) => {
-    /**
-     * @type {Record<format | 'random', nativeKeys>}
-     */
-const formatMap = {
-    random: Math.random() >= 0.5 ? 'toUpperCase' : 'toLowerCase',
-    uppercase: 'toupperCase',
-    lowercase: 'toLowerCase',
+// HOISTING
+// FUNCTION OVERLOADING
+
+
+
+// console.log(example1())
+// console.log(example2())
+console.log(example3())
+
+// Arrow function expression
+
+const example1 = () => {
+ return 123
 }
 
-const method = formatMap[format || 'random']
-return text[method]()
+// Tradtional  function expression
 
-  }
-  
-console.log(changeCase('Lara'))
-console.log(changeCase('Hello'))
+const example2 = function () {
+return 567
+}
+
+// Function declaration - allows hoisting, where you can call code before it has been declared, ie above. Can cause errors 
+
+function example3 () {
+return 890
+}
+
+const example4 = {
+    test: function (){
+        console.log(this)
+    }
+}
+
+const counter = {
+    value: 120, 
+    toAdd: [10, 15, 3],
+
+    actions:  {
+    add: () => {
+        counter.value = counter.value + 1
+    },
+
+    minus: () => {
+        counter.value = counter.value - 1
+    },
+
+    }
+
+}
+
+counter.actions.add()
+counter.actions.add()
+counter.actions.add()
+counter.actions.minus()
+console.log(counter.value)
+
+
+
+
+
+
+
+
+
